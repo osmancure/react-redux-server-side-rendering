@@ -11,6 +11,7 @@ const app = express();
 app.use(express.static('public'));
 
 app.get('*', (req, res) => {
+  console.log("request");
   const store = createStore(reducers, {}, applyMiddleware(thunk));
 
   const currentRoute = matchRoutes(routes, req.path);

@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
     "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
-    "dev:buildserver": "webpack --config webpack.server.js --watch",
-    "dev:buildclient": "webpack --config webpack.client.js --watch"
+    "dev:buildserver": "webpack  --mode development --config webpack.server.js --watch",
+    "dev:buildclient": "webpack  --mode development --config webpack.client.js --watch"
   },
   "author": "",
   "license": "ISC",
@@ -35,5 +35,8 @@
     "webpack": "^4.16.4",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5"
+  },
+  "devDependencies": {
+    "webpack-node-externals": "^1.7.2"
   }
 }

@@ -1,3 +1,5 @@
+const nodeExternals = require('webpack-node-externals');
+
 const path = require('path');
 
 const config = {
@@ -24,7 +26,8 @@ const config = {
         }
       }
     ]
-  }
+  },
+  externals: [nodeExternals()]
 };
 
 module.exports = config;
