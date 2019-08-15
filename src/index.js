@@ -1,4 +1,4 @@
-import 'babel-polyfill';
+import '@babel/polyfill';
 import express from 'express';
 import { matchRoutes } from 'react-router-config';
 import { createStore, applyMiddleware } from 'redux';
@@ -11,7 +11,6 @@ const app = express();
 app.use(express.static('public'));
 
 app.get('*', (req, res) => {
-  console.log("request");
   const store = createStore(reducers, {}, applyMiddleware(thunk));
 
   const currentRoute = matchRoutes(routes, req.path);
